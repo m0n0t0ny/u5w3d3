@@ -35,25 +35,29 @@ public class U5w3d3Application {
 			}
 		};
 
+		System.out.println("---------- Part 1 ----------");
+
 		UserData userData = new UserData(adapter);
 
 		System.out.println("Nome Completo: " + userData.getNomeCompleto());
 		System.out.println("Età: " + userData.getEta());
 
+		System.out.println("---------- Part 2 ----------");
+
 		Book book = new Book();
 		book.addAuthor(faker.book().author());
 		book.addAuthor(faker.book().author());
-		book.setPrice(faker.number().randomDouble(2,2,39));
+		book.setPrice(faker.number().randomDouble(2, 2, 39));
 
-		Page page1 = new Page("Page Content 1");
-		Page page2 = new Page("Page Content 2");
-		Page page3 = new Page("Page Content 3");
+		Page page1 = new Page(faker.lorem().paragraph());
+		Page page2 = new Page(faker.lorem().paragraph());
+		Page page3 = new Page(faker.lorem().paragraph());
 
-		Section section1 = new Section("Chapter 1");
+		Section section1 = new Section(faker.book().title());
 		section1.addElement(page1);
 		section1.addElement(page2);
 
-		Section section2 = new Section("Chapter 2");
+		Section section2 = new Section(faker.book().title());
 		section2.addElement(page3);
 
 		Section mainSection = new Section("Book");
